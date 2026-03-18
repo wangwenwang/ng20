@@ -1,0 +1,57 @@
+<nz-table
+  #table
+  class="app-table"
+  [nzData]="data()"
+  [nzLoading]="loading()"
+  [nzBordered]="bordered()"
+  [nzFrontPagination]="frontPagination()"
+  [nzShowPagination]="showPagination()"
+  [nzPageIndex]="pageIndex()"
+  [nzPageSize]="pageSize()"
+  [nzTotal]="total()"
+  [nzPageSizeOptions]="normalizedPageSizeOptions()"
+  [nzShowSizeChanger]="showSizeChanger()"
+  [nzShowQuickJumper]="showQuickJumper()"
+  [nzHideOnSinglePage]="hideOnSinglePage()"
+  [nzPaginationPosition]="paginationPosition()"
+  [nzSize]="size()"
+  [nzScroll]="normalizedScroll()"
+  [nzNoResult]="noResult()"
+  (nzPageIndexChange)="onPageIndexChange($event)"
+  (nzPageSizeChange)="onPageSizeChange($event)"
+  (nzQueryParams)="onQueryParamsChange($event)"
+  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+>
+  <thead>
+    <tr>
+      @for (column of columns(); track column.key) {
+        <th
+          [nzWidth]="getColumnWidth(column)"
+          [nzAlign]="getColumnAlign(column)"
+          [nzEllipsis]="column.ellipsis ?? false"
+        >
+          {{ column.title }}
+        </th>
+      }
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (row of table.data; track $index) {
+      <tr>
+        @for (column of columns(); track column.key) {
+          <td [nzAlign]="getColumnAlign(column)">
+            @if (column.cellTemplate) {
+              <ng-container
+                [ngTemplateOutlet]="column.cellTemplate"
+                [ngTemplateOutletContext]="getCellContext(row, column, $index)"
+              />
+            } @else {
+              {{ getCellValue(row, column, $index) ?? '-' }}
+            }
+          </td>
+        }
+      </tr>
+    }
+  </tbody>
+</nz-table>
