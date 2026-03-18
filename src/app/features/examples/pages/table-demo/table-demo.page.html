@@ -1,0 +1,41 @@
+<section class="demo-page">
+  <header class="demo-page__header">
+    <div>
+      <p class="demo-page__eyebrow">App Table 示例</p>
+      <h1>基础表格封装示例</h1>
+      <p class="demo-page__desc">
+        这个页面演示了 `app-table` 的常见用法：列配置、分页、自定义单元格模板和滚动宽度。
+      </p>
+    </div>
+  </header>
+
+  <app-table
+    [columns]="columns()"
+    [data]="users"
+    [pageSize]="pageSize"
+    [total]="users.length"
+    [showSizeChanger]="true"
+    [showQuickJumper]="true"
+    [bordered]="true"
+    [scroll]="{ x: '960px' }"
+  />
+
+  <ng-template #nameCell let-row>
+    <div class="user-cell">
+      <strong>{{ row.name }}</strong>
+      <span>ID: {{ row.id }}</span>
+    </div>
+  </ng-template>
+
+  <ng-template #statusCell let-row>
+    <span [class]="getStatusClass(row.status)">{{ row.status }}</span>
+  </ng-template>
+
+  <ng-template #actionCell let-row>
+    <div class="action-cell">
+      <a>查看</a>
+      <a>编辑</a>
+      <a class="danger-link">删除</a>
+    </div>
+  </ng-template>
+</section>
