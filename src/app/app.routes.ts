@@ -18,7 +18,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import(
             './features/examples/pages/ng-zorro-playground/ng-zorro-playground.page'
-          ).then(m => m.NzDemoTableRowSelectionCustomComponent)
+          ).then(m => m.NzDemoTableFixedHeaderComponent)
       },
       {
         path: 'table-demo',
