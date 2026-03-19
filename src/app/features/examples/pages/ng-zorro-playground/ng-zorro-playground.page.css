@@ -1,0 +1,35 @@
+.playground-page {
+  padding: 32px;
+}
+
+.playground-page__header {
+  margin-bottom: 24px;
+}
+
+.playground-page__eyebrow {
+  margin: 0 0 8px;
+  color: #1677ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.playground-page__header h1 {
+  margin: 0 0 8px;
+}
+
+.playground-page__desc {
+  margin: 0;
+  max-width: 720px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.playground-page__canvas {
+  min-height: 320px;
+  padding: 24px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 12px;
+  background: #fafafa;
+  color: rgba(0, 0, 0, 0.45);
+}
