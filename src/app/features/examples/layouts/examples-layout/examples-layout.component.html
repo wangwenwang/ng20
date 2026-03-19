@@ -1,0 +1,22 @@
+<nz-layout class="examples-layout">
+  <nz-sider class="examples-layout__sider" [nzWidth]="240" nzTheme="light">
+    <div class="examples-layout__brand">
+      <span class="examples-layout__brand-title">Examples</span>
+      <span class="examples-layout__brand-subtitle">ng-zorro playground</span>
+    </div>
+
+    <ul nz-menu nzTheme="light" nzMode="inline" class="examples-layout__menu">
+      @for (item of menuItems; track item.path) {
+        <li nz-menu-item [nzSelected]="isActive(item.path)">
+          <a [routerLink]="item.path">{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  </nz-sider>
+
+  <nz-layout>
+    <nz-content class="examples-layout__content">
+      <router-outlet />
+    </nz-content>
+  </nz-layout>
+</nz-layout>

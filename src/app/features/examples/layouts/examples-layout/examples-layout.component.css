@@ -1,0 +1,42 @@
+.examples-layout {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.examples-layout__sider {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 1px solid #f0f0f0;
+}
+
+.examples-layout__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 16px 12px;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.examples-layout__brand-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.examples-layout__brand-subtitle {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.examples-layout__menu {
+  border-right: 0;
+  background: transparent;
+}
+
+.examples-layout__content {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
