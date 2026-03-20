@@ -2,40 +2,78 @@
   <header class="demo-page__header">
     <div>
       <p class="demo-page__eyebrow">App Table 示例</p>
-      <h1>基础表格封装示例</h1>
+      <h1>基于 nz-table 的增强封装示例</h1>
       <p class="demo-page__desc">
-        这个页面演示了 `app-table` 的常见用法：列配置、分页、自定义单元格模板和滚动宽度。
+        不重新发明表格 DSL，直接增强 `nz-table`。拖动表头右侧手柄即可调整列宽，排序、分页和模板能力仍然保持原生写法。
       </p>
     </div>
   </header>
 
-  <app-table
-    [columns]="columns()"
-    [data]="users"
-    [pageSize]="pageSize"
-    [total]="users.length"
-    [showSizeChanger]="true"
-    [showQuickJumper]="true"
-    [bordered]="true"
-    [scroll]="{ x: '960px' }"
-  />
+  <div class="demo-page__tips">
+    <span>增强点：列宽拖拽</span>
+    <span>保留能力：`nz-table` 的分页、排序、滚动、自定义单元格等全部原生能力</span>
+  </div>
 
-  <ng-template #nameCell let-row>
-    <div class="user-cell">
-      <strong>{{ row.name }}</strong>
-      <span>ID: {{ row.id }}</span>
-    </div>
-  </ng-template>
-
-  <ng-template #statusCell let-row>
-    <span [class]="getStatusClass(row.status)">{{ row.status }}</span>
-  </ng-template>
-
-  <ng-template #actionCell let-row>
-    <div class="action-cell">
-      <a>查看</a>
-      <a>编辑</a>
-      <a class="danger-link">删除</a>
-    </div>
-  </ng-template>
+  <div class="demo-page__card">
+    <nz-table
+      #basicTable
+      appTable
+      [appTableMinColumnWidth]="60"
+      [nzData]="users"
+      [nzBordered]="true"
+      [nzPageSize]="pageSize"
+      [nzShowSizeChanger]="true"
+      [nzScroll]="tableScroll"
+    >
+      <thead>
+        <tr>
+          <th appResizableColumn="name" nzWidth="180px">姓名</th>
+          <th
+            appResizableColumn="age"
+            [appResizableMinWidth]="100"
+            nzWidth="120px"
+            nzColumnKey="age"
+            [nzShowSort]="true"
+            [nzSortFn]="sortByAge"
+            nzAlign="center"
+          >
+            年龄
+          </th>
+          <th appResizableColumn="status" nzWidth="140px" nzAlign="center">状态</th>
+          <th appResizableColumn="email" [appResizableMinWidth]="220" nzWidth="280px">邮箱</th>
+          <th appResizableColumn="department" [appResizableMinWidth]="180" nzWidth="220px">
+            部门
+          </th>
+          <th appResizableColumn="action" [appResizableMinWidth]="160" nzWidth="180px" nzAlign="center">
+            操作
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of basicTable.data; track row.id) {
+          <tr>
+            <td>
+              <div class="user-cell">
+                <strong>{{ row.name }}</strong>
+                <span>ID: {{ row.id }}</span>
+              </div>
+            </td>
+            <td nzAlign="center">{{ row.age }}</td>
+            <td nzAlign="center">
+              <span [class]="getStatusClass(row.status)">{{ row.status }}</span>
+            </td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.department }}</td>
+            <td nzAlign="center">
+              <div class="action-cell">
+                <a>查看</a>
+                <a>编辑</a>
+                <a class="danger-link">删除</a>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </nz-table>
+  </div>
 </section>

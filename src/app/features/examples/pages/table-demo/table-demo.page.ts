@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, TemplateRef, computed, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 import {
-  AppTableCellContext,
-  AppTableColumn,
-  AppTableComponent
+  AppResizableColumnDirective,
+  AppTableDirective
 } from '../../../../shared/ui/ng-zorro/table';
 
 interface UserTableRow {
@@ -17,20 +18,14 @@ interface UserTableRow {
 
 @Component({
   selector: 'app-table-demo-page',
-  imports: [AppTableComponent],
+  imports: [NzTableModule, AppTableDirective, AppResizableColumnDirective],
   templateUrl: './table-demo.page.html',
   styleUrl: './table-demo.page.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TableDemoPageComponent {
-  private readonly nameCell =
-    viewChild.required<TemplateRef<AppTableCellContext<UserTableRow>>>('nameCell');
-  private readonly statusCell =
-    viewChild.required<TemplateRef<AppTableCellContext<UserTableRow>>>('statusCell');
-  private readonly actionCell =
-    viewChild.required<TemplateRef<AppTableCellContext<UserTableRow>>>('actionCell');
-
   protected readonly pageSize = 5;
+  protected readonly tableScroll = { x: '1080px' };
   protected readonly users: UserTableRow[] = [
     {
       id: 1001,
@@ -81,45 +76,7 @@ export class TableDemoPageComponent {
       department: '设计体验组'
     }
   ];
-
-  protected readonly columns = computed<AppTableColumn<UserTableRow>[]>(() => [
-    {
-      key: 'name',
-      title: '姓名',
-      width: '180px',
-      cellTemplate: this.nameCell()
-    },
-    {
-      key: 'age',
-      title: '年龄',
-      width: '100px',
-      align: 'center'
-    },
-    {
-      key: 'status',
-      title: '状态',
-      width: '120px',
-      align: 'center',
-      cellTemplate: this.statusCell()
-    },
-    {
-      key: 'email',
-      title: '邮箱',
-      ellipsis: true
-    },
-    {
-      key: 'department',
-      title: '部门',
-      width: '180px'
-    },
-    {
-      key: 'action',
-      title: '操作',
-      width: '160px',
-      align: 'center',
-      cellTemplate: this.actionCell()
-    }
-  ]);
+  protected readonly sortByAge = (a: UserTableRow, b: UserTableRow): number => a.age - b.age;
 
   protected getStatusClass(status: UserTableRow['status']): string {
     switch (status) {

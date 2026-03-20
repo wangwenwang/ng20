@@ -1,2 +1,2 @@
-export * from './app-table';
-export * from './app-table.types';
+export * from './app-table.directive';
+export * from './app-resizable-column.directive';

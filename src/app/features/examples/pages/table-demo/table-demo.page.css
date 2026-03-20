@@ -8,6 +8,13 @@
   padding: 32px;
 }
 
+.demo-page__card {
+  border-radius: 20px;
+  background: #fff;
+  padding: 20px 20px 8px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
 .demo-page__header {
   margin-bottom: 20px;
 }
@@ -30,6 +37,22 @@
   margin: 0;
   color: #595959;
   font-size: 14px;
+}
+
+.demo-page__tips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.demo-page__tips span {
+  border-radius: 999px;
+  background: #e6f4ff;
+  color: #0958d9;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1;
 }
 
 .user-cell {
@@ -87,4 +110,25 @@
 
 .action-cell .danger-link {
   color: #ff4d4f;
+}
+
+:host ::ng-deep .app-table__resizable-column {
+  position: relative;
+}
+
+:host ::ng-deep .app-table__resizable-column .app-table__resize-handle {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+:host ::ng-deep .app-table__resizable-column:hover .app-table__resize-handle,
+:host ::ng-deep .app-table__resizable-column--dragging .app-table__resize-handle,
+:host ::ng-deep .app-table__resizable-column--active .app-table__resize-handle {
+  opacity: 1;
+}
+
+:host ::ng-deep .app-table__resizable-column:hover .app-table__resize-handle span,
+:host ::ng-deep .app-table__resizable-column--dragging .app-table__resize-handle span,
+:host ::ng-deep .app-table__resizable-column--active .app-table__resize-handle span {
+  background: #1677ff !important;
 }
