@@ -1,4 +1,26 @@
+import { Type, isStandalone } from '@angular/core';
 import { Routes } from '@angular/router';
+
+function isStandaloneComponent(value: unknown): value is Type<unknown> {
+  return (
+    typeof value === 'function' &&
+    isStandalone(value as Type<unknown>) &&
+    'ɵcmp' in value
+  );
+}
+
+function pickStandaloneComponent(
+  exports: Record<string, unknown>,
+  routePath: string
+): Type<unknown> {
+  const component = Object.values(exports).find(isStandaloneComponent);
+
+  if (!component) {
+    throw new Error(`No standalone component export found for route "${routePath}".`);
+  }
+
+  return component;
+}
 
 export const routes: Routes = [
   {
@@ -18,7 +40,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import(
             './features/examples/pages/ng-zorro-playground/ng-zorro-playground.page'
-          ).then(m => m.NzDemoTableFixedHeaderComponent)
+          ).then(m => pickStandaloneComponent(m, 'ng-zorro-playground'))
       },
       {
         path: 'table-demo',
