@@ -1,0 +1,18 @@
+.theme-scrollbar(@thumb-color, @track-color) {
+  scrollbar-color: @thumb-color @track-color;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: @track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid @track-color;
+    border-radius: 999px;
+    background: @thumb-color;
+  }
+}

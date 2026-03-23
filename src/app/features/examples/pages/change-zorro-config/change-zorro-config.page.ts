@@ -11,7 +11,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
   selector: 'app-change-zorro-config-page',
   imports: [FormsModule, NzButtonModule, NzCardModule, NzInputModule, NzSelectModule],
   templateUrl: './change-zorro-config.page.html',
-  styleUrl: './change-zorro-config.page.css',
+  styleUrl: './change-zorro-config.page.less',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChangeZorroConfigPageComponent {
