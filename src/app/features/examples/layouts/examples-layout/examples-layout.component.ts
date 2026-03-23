@@ -17,7 +17,8 @@ interface ThemeOption {
   readonly label: string;
   readonly value: string;
   readonly primaryColor: string;
-  readonly appTheme: 'default' | 'dark' | 'orange-dark';
+  readonly appTheme: 'default' | 'dark' | 'orange-light' | 'orange-dark';
+  readonly appearance: 'light' | 'dark';
 }
 
 @Component({
@@ -51,42 +52,56 @@ export class ExamplesLayoutComponent {
       label: '默认蓝',
       value: 'default-blue',
       primaryColor: '#1890ff',
-      appTheme: 'default'
+      appTheme: 'default',
+      appearance: 'light'
     },
     {
       label: '极客蓝',
       value: 'geek-blue',
       primaryColor: '#1677ff',
-      appTheme: 'default'
+      appTheme: 'default',
+      appearance: 'light'
     },
     {
       label: '紫罗兰',
       value: 'violet',
       primaryColor: '#722ed1',
-      appTheme: 'default'
+      appTheme: 'default',
+      appearance: 'light'
     },
     {
       label: '青绿色',
       value: 'cyan',
       primaryColor: '#13c2c2',
-      appTheme: 'default'
+      appTheme: 'default',
+      appearance: 'light'
     },
     {
       label: '活力橙',
       value: 'orange',
       primaryColor: '#fa8c16',
-      appTheme: 'default'
+      appTheme: 'default',
+      appearance: 'light'
+    },
+    {
+      label: '晨曦橙',
+      value: 'orange-light',
+      primaryColor: '#fa8c16',
+      appTheme: 'orange-light',
+      appearance: 'light'
     },
     {
       label: '暮夜橙',
       value: 'orange-dark',
       primaryColor: '#fa8c16',
-      appTheme: 'orange-dark'
+      appTheme: 'orange-dark',
+      appearance: 'dark'
     }
   ];
 
   protected selectedTheme = this.themeOptions[0]?.value ?? 'default-blue';
   protected currentAppTheme: ThemeOption['appTheme'] = 'default';
+  protected currentAppearance: ThemeOption['appearance'] = 'light';
 
   constructor() {
     const defaultTheme = this.themeOptions[0];
@@ -109,11 +124,16 @@ export class ExamplesLayoutComponent {
   }
 
   protected get isDarkTheme(): boolean {
-    return this.currentAppTheme !== 'default';
+    return this.currentAppearance === 'dark';
+  }
+
+  protected get isOrangeLightTheme(): boolean {
+    return this.currentAppTheme === 'orange-light';
   }
 
   private applyTheme(theme: ThemeOption): void {
     this.currentAppTheme = theme.appTheme;
+    this.currentAppearance = theme.appearance;
     this.document.documentElement.setAttribute('data-app-theme', theme.appTheme);
     this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
   }

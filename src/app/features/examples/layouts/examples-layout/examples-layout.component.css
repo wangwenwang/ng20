@@ -57,6 +57,30 @@
     }
   }
 
+  &.examples-layout--orange-light {
+    background: #fff7f0;
+
+    .examples-layout__sider {
+      border-right-color: rgba(250, 140, 22, 0.18);
+
+      .examples-layout__brand {
+        color: rgba(57, 31, 0, 0.9);
+
+        .examples-layout__brand-subtitle {
+          color: rgba(97, 56, 0, 0.68);
+        }
+      }
+    }
+
+    .examples-layout__header {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .examples-layout__content {
+      background: #fff7f0;
+    }
+  }
+
   &.examples-layout--dark {
     background: #120c08;
 
