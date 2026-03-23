@@ -6,6 +6,9 @@
       <p class="change-zorro-config-page__desc">
         按官方文档方式调用 `NzConfigService.set(...)`，在运行时动态更新主题主色。
       </p>
+      <p class="change-zorro-config-page__desc">
+        额外增加了一个由 Less 变量驱动的实验块，用来观察页面直接使用 `@` 变量时，是否会被主题运行时切换一起修改。
+      </p>
     </div>
   </header>
 
@@ -82,6 +85,23 @@
       <p class="change-zorro-config-page__hint">
         该能力依赖 `ng-zorro-antd.variable.min.css`，否则运行时更新主题不会生效。
       </p>
+    </nz-card>
+
+    <nz-card nzTitle="Less 变量实验">
+      <div class="change-zorro-config-page__preview">
+        <div class="change-zorro-config-page__less-meta">
+          <span>变量名</span>
+          <strong>{{ lessVariableName }}</strong>
+          <span>来源</span>
+          <strong>{{ lessVariableSource }}</strong>
+        </div>
+        <div class="change-zorro-config-page__less-box">
+          这个区域的背景色直接来自页面 Less 里消费的 `@demo-panel-color`。
+        </div>
+        <p class="change-zorro-config-page__hint">
+          这里演示的是编译期 Less 变量。即使上面调用 `NzConfigService.set(...)` 修改 ng-zorro 主色，这个色块通常也不会跟着变。
+        </p>
+      </div>
     </nz-card>
   </div>
 </section>

@@ -1,3 +1,5 @@
+@import (reference) '../../../../../styles/themes/default.less';
+
 .change-zorro-config-page {
   display: flex;
   flex-direction: column;
@@ -137,6 +139,23 @@
   color: #dbeafe;
   font-size: 13px;
   line-height: 1.6;
+}
+
+.change-zorro-config-page__less-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.change-zorro-config-page__less-box {
+  padding: 20px;
+  border-radius: 16px;
+  background: @demo-panel-color;
+  color: @demo-panel-text-color;
+  font-weight: 600;
+  box-shadow: 0 12px 24px @demo-panel-shadow-color;
 }
 
 .change-zorro-config-page__hint {

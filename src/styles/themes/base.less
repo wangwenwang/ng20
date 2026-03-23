@@ -3,10 +3,14 @@ body {
   min-height: 100%;
 }
 
+html {
+  color-scheme: @app-color-scheme;
+}
+
 body {
   margin: 0;
-  background: var(--app-bg);
-  color: var(--app-text-color);
+  background: @app-bg;
+  color: @app-text-color;
   font-family:
     'Segoe UI',
     -apple-system,
@@ -16,7 +20,7 @@ body {
     'Microsoft YaHei',
     sans-serif;
 
-  .theme-scrollbar(var(--app-scrollbar-thumb), var(--app-scrollbar-track));
+  .theme-scrollbar(@app-scrollbar-thumb, @app-scrollbar-track);
 }
 
 *,

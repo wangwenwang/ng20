@@ -1,15 +1,16 @@
 @import './mixin.less';
 
-:root {
-  color-scheme: light;
-  --app-bg: #f5f5f5;
-  --app-surface-bg: #ffffff;
-  --app-text-color: rgba(0, 0, 0, 0.88);
-  --app-text-secondary: rgba(0, 0, 0, 0.65);
-  --app-border-color: #f0f0f0;
-  --app-shadow-color: rgba(15, 23, 42, 0.08);
-  --app-scrollbar-thumb: rgba(0, 0, 0, 0.24);
-  --app-scrollbar-track: rgba(0, 0, 0, 0.06);
-}
+@app-color-scheme: light;
+@app-bg: #f5f5f5;
+@app-surface-bg: #ffffff;
+@app-text-color: rgba(0, 0, 0, 0.88);
+@app-text-secondary: rgba(0, 0, 0, 0.65);
+@app-border-color: #f0f0f0;
+@app-shadow-color: rgba(15, 23, 42, 0.08);
+@app-scrollbar-thumb: rgba(0, 0, 0, 0.24);
+@app-scrollbar-track: rgba(0, 0, 0, 0.06);
+@demo-panel-color: #ff7875;
+@demo-panel-text-color: yellow;
+@demo-panel-shadow-color: fade(@demo-panel-color, 24%);
 
 @import './base.less';
