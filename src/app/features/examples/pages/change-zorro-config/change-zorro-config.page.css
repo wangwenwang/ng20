@@ -1,0 +1,152 @@
+.change-zorro-config-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(24, 144, 255, 0.08), transparent 35%),
+    linear-gradient(315deg, rgba(114, 46, 209, 0.08), transparent 42%),
+    #f7f9fc;
+}
+
+.change-zorro-config-page__hero h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.change-zorro-config-page__eyebrow {
+  margin: 0 0 8px;
+  color: #1890ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.change-zorro-config-page__desc {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+}
+
+.change-zorro-config-page__toolbar,
+.change-zorro-config-page__preset-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid rgba(5, 5, 5, 0.06);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 40px rgba(31, 45, 61, 0.08);
+}
+
+.change-zorro-config-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.change-zorro-config-page__field--grow {
+  flex: 1;
+}
+
+.change-zorro-config-page__field span,
+.change-zorro-config-page__label {
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.change-zorro-config-page__field input[type='color'] {
+  width: 72px;
+  height: 44px;
+  padding: 4px;
+  border: 1px solid rgba(5, 5, 5, 0.12);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.change-zorro-config-page__actions,
+.change-zorro-config-page__row,
+.change-zorro-config-page__preset-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.change-zorro-config-page__preset-block {
+  flex-direction: column;
+}
+
+.change-zorro-config-page__preset {
+  width: 36px;
+  height: 36px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.change-zorro-config-page__preset:hover {
+  transform: translateY(-2px);
+}
+
+.change-zorro-config-page__preset--active {
+  border-color: rgba(0, 0, 0, 0.68);
+}
+
+.change-zorro-config-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.change-zorro-config-page__preview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.change-zorro-config-page__row nz-select {
+  width: 220px;
+}
+
+.change-zorro-config-page__token {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(24, 144, 255, 0.08);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.change-zorro-config-page__code {
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  border-radius: 16px;
+  background: #0f172a;
+  color: #dbeafe;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.change-zorro-config-page__hint {
+  margin: 16px 0 0;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .change-zorro-config-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
