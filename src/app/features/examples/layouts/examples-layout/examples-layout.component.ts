@@ -17,7 +17,7 @@ interface ThemeOption {
   readonly label: string;
   readonly value: string;
   readonly primaryColor: string;
-  readonly appTheme: 'default' | 'dark' | 'orange-light' | 'orange-dark';
+  readonly appTheme: 'default' | 'orange-light' | 'orange-dark';
   readonly appearance: 'light' | 'dark';
 }
 
