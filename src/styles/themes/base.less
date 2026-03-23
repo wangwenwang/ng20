@@ -9,6 +9,25 @@ app-root {
   min-height: 100vh;
 }
 
+.theme-scrollbar(@thumb-color, @track-color) {
+  scrollbar-color: @thumb-color @track-color;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: @track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid @track-color;
+    border-radius: 999px;
+    background: @thumb-color;
+  }
+}
+
 .theme-base(@root-selector) {
   @{root-selector},
   @{root-selector} body {
@@ -37,9 +56,5 @@ app-root {
 
   @{root-selector} a {
     color: var(--ant-primary-color);
-  }
-
-  @{root-selector} ::selection {
-    background: color-mix(in srgb, var(--ant-primary-color) 24%, white);
   }
 }

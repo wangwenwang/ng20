@@ -1,41 +1,18 @@
-.theme-scrollbar(@thumb-color, @track-color) {
-  scrollbar-color: @thumb-color @track-color;
-
-  &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: @track-color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border: 2px solid @track-color;
-    border-radius: 999px;
-    background: @thumb-color;
-  }
-}
+@import (reference) './base.less';
 
 .themeMixin(@rules) {
   html[data-app-theme='default'] {
-    @demo-panel-color: #ff7875;
-    @demo-panel-text-color: yellow;
-    @demo-panel-shadow-color: fade(@demo-panel-color, 24%);
+    @import (reference) './default.less';
     @rules();
   }
 
   html[data-app-theme='orange-light'] {
-    @demo-panel-color: #ffd8bf;
-    @demo-panel-text-color: #612500;
-    @demo-panel-shadow-color: fade(#fa8c16, 22%);
+    @import (reference) './orange-light.less';
     @rules();
   }
 
   html[data-app-theme='orange-dark'] {
-    @demo-panel-color: #fa8c16;
-    @demo-panel-text-color: #2b1603;
-    @demo-panel-shadow-color: fade(@demo-panel-color, 28%);
+    @import (reference) './orange-dark.less';
     @rules();
   }
 }
