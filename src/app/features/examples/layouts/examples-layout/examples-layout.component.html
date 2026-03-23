@@ -15,6 +15,17 @@
   </nz-sider>
 
   <nz-layout>
+    <div class="examples-layout__header">
+      <nz-select
+        [(ngModel)]="selectedTheme"
+        nzPlaceHolder="请选择主题色"
+        (ngModelChange)="onThemeChange($event)"
+      >
+        @for (theme of themeOptions; track theme.value) {
+          <nz-option [nzValue]="theme.value" [nzLabel]="theme.label"></nz-option>
+        }
+      </nz-select>
+    </div>
     <nz-content class="examples-layout__content">
       <div class="al-container">
         <router-outlet />
