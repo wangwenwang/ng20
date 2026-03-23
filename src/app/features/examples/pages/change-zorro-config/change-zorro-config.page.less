@@ -150,13 +150,15 @@
 }
 
 .themeMixin({
-  .change-zorro-config-page__less-box {
-    padding: 20px;
-    border-radius: 16px;
-    background: @demo-panel-color;
-    color: @demo-panel-text-color;
-    font-weight: 600;
-    box-shadow: 0 12px 24px @demo-panel-shadow-color;
+  :host {
+    .change-zorro-config-page__less-box {
+      padding: 20px;
+      border-radius: 16px;
+      background: @xxx;
+      color: @demo-panel-text-color;
+      font-weight: 600;
+      box-shadow: 0 12px 24px @demo-panel-shadow-color;
+    }
   }
 });
 
