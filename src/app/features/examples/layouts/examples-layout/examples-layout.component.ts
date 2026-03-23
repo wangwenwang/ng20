@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
@@ -16,6 +17,7 @@ interface ThemeOption {
   readonly label: string;
   readonly value: string;
   readonly primaryColor: string;
+  readonly appTheme: 'default' | 'dark' | 'orange-dark';
 }
 
 @Component({
@@ -26,6 +28,7 @@ interface ThemeOption {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplesLayoutComponent {
+  private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly nzConfigService = inject(NzConfigService);
 
@@ -47,31 +50,51 @@ export class ExamplesLayoutComponent {
     {
       label: '默认蓝',
       value: 'default-blue',
-      primaryColor: '#1890ff'
+      primaryColor: '#1890ff',
+      appTheme: 'default'
     },
     {
       label: '极客蓝',
       value: 'geek-blue',
-      primaryColor: '#1677ff'
+      primaryColor: '#1677ff',
+      appTheme: 'default'
     },
     {
       label: '紫罗兰',
       value: 'violet',
-      primaryColor: '#722ed1'
+      primaryColor: '#722ed1',
+      appTheme: 'default'
     },
     {
       label: '青绿色',
       value: 'cyan',
-      primaryColor: '#13c2c2'
+      primaryColor: '#13c2c2',
+      appTheme: 'default'
     },
     {
       label: '活力橙',
       value: 'orange',
-      primaryColor: '#fa8c16'
+      primaryColor: '#fa8c16',
+      appTheme: 'default'
+    },
+    {
+      label: '暮夜橙',
+      value: 'orange-dark',
+      primaryColor: '#fa8c16',
+      appTheme: 'orange-dark'
     }
   ];
 
   protected selectedTheme = this.themeOptions[0]?.value ?? 'default-blue';
+  protected currentAppTheme: ThemeOption['appTheme'] = 'default';
+
+  constructor() {
+    const defaultTheme = this.themeOptions[0];
+
+    if (defaultTheme) {
+      this.applyTheme(defaultTheme);
+    }
+  }
 
   protected onThemeChange(themeValue: string): void {
     this.selectedTheme = themeValue;
@@ -82,7 +105,17 @@ export class ExamplesLayoutComponent {
       return;
     }
 
-    this.nzConfigService.set('theme', { primaryColor: selectedTheme.primaryColor });
+    this.applyTheme(selectedTheme);
+  }
+
+  protected get isDarkTheme(): boolean {
+    return this.currentAppTheme !== 'default';
+  }
+
+  private applyTheme(theme: ThemeOption): void {
+    this.currentAppTheme = theme.appTheme;
+    this.document.documentElement.setAttribute('data-app-theme', theme.appTheme);
+    this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
   }
 
   protected isActive(path: string): boolean {

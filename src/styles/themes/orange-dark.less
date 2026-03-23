@@ -1,0 +1,19 @@
+@import './mixin.less';
+
+@app-color-scheme: dark;
+@app-bg: #120c08;
+@app-surface-bg: #1f140d;
+@app-text-color: rgba(255, 244, 230, 0.94);
+@app-text-secondary: rgba(255, 224, 189, 0.74);
+@app-border-color: rgba(250, 140, 22, 0.22);
+@app-shadow-color: rgba(0, 0, 0, 0.42);
+@app-scrollbar-thumb: rgba(250, 140, 22, 0.45);
+@app-scrollbar-track: rgba(255, 255, 255, 0.08);
+@demo-panel-color: #fa8c16;
+@demo-panel-text-color: #2b1603;
+@demo-panel-shadow-color: fade(@demo-panel-color, 28%);
+@theme-root-selector: ~"html[data-app-theme='orange-dark']";
+
+@import './base.less';
+
+.theme-base(@theme-root-selector);

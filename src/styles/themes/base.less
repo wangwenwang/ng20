@@ -1,28 +1,3 @@
-html,
-body {
-  min-height: 100%;
-}
-
-html {
-  color-scheme: @app-color-scheme;
-}
-
-body {
-  margin: 0;
-  background: @app-bg;
-  color: @app-text-color;
-  font-family:
-    'Segoe UI',
-    -apple-system,
-    BlinkMacSystemFont,
-    'PingFang SC',
-    'Hiragino Sans GB',
-    'Microsoft YaHei',
-    sans-serif;
-
-  .theme-scrollbar(@app-scrollbar-thumb, @app-scrollbar-track);
-}
-
 *,
 *::before,
 *::after {
@@ -34,10 +9,37 @@ app-root {
   min-height: 100vh;
 }
 
-a {
-  color: var(--ant-primary-color);
-}
+.theme-base(@root-selector) {
+  @{root-selector},
+  @{root-selector} body {
+    min-height: 100%;
+  }
 
-::selection {
-  background: color-mix(in srgb, var(--ant-primary-color) 24%, white);
+  @{root-selector} {
+    color-scheme: @app-color-scheme;
+  }
+
+  @{root-selector} body {
+    margin: 0;
+    background: @app-bg;
+    color: @app-text-color;
+    font-family:
+      'Segoe UI',
+      -apple-system,
+      BlinkMacSystemFont,
+      'PingFang SC',
+      'Hiragino Sans GB',
+      'Microsoft YaHei',
+      sans-serif;
+
+    .theme-scrollbar(@app-scrollbar-thumb, @app-scrollbar-track);
+  }
+
+  @{root-selector} a {
+    color: var(--ant-primary-color);
+  }
+
+  @{root-selector} ::selection {
+    background: color-mix(in srgb, var(--ant-primary-color) 24%, white);
+  }
 }

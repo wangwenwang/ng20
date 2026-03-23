@@ -12,5 +12,8 @@
 @demo-panel-color: #531dab;
 @demo-panel-text-color: purple;
 @demo-panel-shadow-color: fade(@demo-panel-color, 30%);
+@theme-root-selector: ~"html[data-app-theme='dark']";
 
 @import './base.less';
+
+.theme-base(@theme-root-selector);
