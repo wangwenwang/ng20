@@ -16,3 +16,33 @@
     background: @thumb-color;
   }
 }
+
+.themeMixin(@rules) {
+  html[data-app-theme='default'] {
+    @demo-panel-color: #ff7875;
+    @demo-panel-text-color: yellow;
+    @demo-panel-shadow-color: fade(@demo-panel-color, 24%);
+    @rules();
+  }
+
+  html[data-app-theme='dark'] {
+    @demo-panel-color: #177ddc;
+    @demo-panel-text-color: #e6f4ff;
+    @demo-panel-shadow-color: fade(@demo-panel-color, 28%);
+    @rules();
+  }
+
+  html[data-app-theme='orange-light'] {
+    @demo-panel-color: #ffd8bf;
+    @demo-panel-text-color: #612500;
+    @demo-panel-shadow-color: fade(#fa8c16, 22%);
+    @rules();
+  }
+
+  html[data-app-theme='orange-dark'] {
+    @demo-panel-color: #fa8c16;
+    @demo-panel-text-color: #2b1603;
+    @demo-panel-shadow-color: fade(@demo-panel-color, 28%);
+    @rules();
+  }
+}

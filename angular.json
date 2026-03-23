@@ -17,6 +17,11 @@
             "polyfills": [
               "zone.js"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/themes"
+              ]
+            },
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -75,6 +80,11 @@
               "zone.js",
               "zone.js/testing"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/themes"
+              ]
+            },
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
