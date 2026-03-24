@@ -1,3 +1,11 @@
 html.orange-light {
+
+  /* Primary */
+  --portal-primary-color: green;
+
+  /* Buttons */
+  --portal-btn-primary-bg: green;
+
+  /* Select */
   --portal-select-item-selected-color: green;
 }

@@ -1,3 +1,11 @@
 html.orange-dark {
+
+  /* Primary */
+  --portal-primary-color: red;
+
+  /* Buttons */
+  --portal-btn-primary-bg: red;
+
+  /* Select */
   --portal-select-item-selected-color: red;
 }
