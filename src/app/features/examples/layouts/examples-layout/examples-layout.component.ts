@@ -32,6 +32,7 @@ export class ExamplesLayoutComponent {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly nzConfigService = inject(NzConfigService);
+  private readonly appThemeClasses = ['orange-light', 'orange-dark'] as const;
 
   protected readonly menuItems: ExampleMenuItem[] = [
     {
@@ -111,9 +112,17 @@ export class ExamplesLayoutComponent {
   }
 
   private applyTheme(theme: ThemeOption): void {
+    const root = this.document.documentElement;
+
     this.currentAppTheme = theme.appTheme;
     this.currentAppearance = theme.appearance;
-    this.document.documentElement.setAttribute('data-app-theme', theme.appTheme);
+    root.classList.remove(...this.appThemeClasses);
+
+    if (theme.appTheme !== 'default') {
+      root.classList.add(theme.appTheme);
+    }
+
+    root.removeAttribute('data-app-theme');
     this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
   }
 
