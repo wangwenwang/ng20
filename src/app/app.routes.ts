@@ -55,6 +55,13 @@ export const routes: Routes = [
           import('./features/examples/pages/table-demo/table-demo.page').then(
             m => m.TableDemoPageComponent
           )
+      },
+      {
+        path: 'hmi',
+        loadComponent: () =>
+          import('./features/examples/pages/hmi/hmi.page').then(
+            m => m.HmiPageComponent
+          )
       }
     ]
   }

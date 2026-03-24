@@ -46,6 +46,10 @@ export class ExamplesLayoutComponent {
     {
       label: 'Table Demo',
       path: '/table-demo'
+    },
+    {
+      label: 'HMI 页面',
+      path: '/hmi'
     }
   ];
   protected readonly themeOptions: ThemeOption[] = [
