@@ -7,6 +7,7 @@ import { NzConfigService } from 'ng-zorro-antd/core/config';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 interface ExampleMenuItem {
   readonly label: string;
@@ -23,7 +24,7 @@ interface ThemeOption {
 
 @Component({
   selector: 'app-examples-layout',
-  imports: [FormsModule, RouterOutlet, RouterLink, NzLayoutModule, NzMenuModule, NzSelectModule],
+  imports: [FormsModule, RouterOutlet, RouterLink, NzLayoutModule, NzMenuModule, NzSelectModule, NzButtonModule],
   templateUrl: './examples-layout.component.html',
   styleUrl: './examples-layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

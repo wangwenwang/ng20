@@ -1,4 +1,5 @@
-html.orange-light {
+html.orange-light,
+app-hmi-page.orange-light {
 
   /* Primary */
   --portal-primary-color: green;

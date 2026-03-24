@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .hmi-page {
   display: flex;
   flex-direction: column;
@@ -10,12 +14,19 @@
     #f7f9fc;
 }
 
-.hmi-page__hero {
+.hmi-page__hero,
+.hmi-page__panel {
   padding: 24px 28px;
   border: 1px solid rgba(5, 5, 5, 0.06);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 14px 40px rgba(31, 45, 61, 0.08);
+}
+
+.hmi-page__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .hmi-page__eyebrow {
@@ -28,13 +39,50 @@
 }
 
 .hmi-page__hero h1,
- h2 {
+.hmi-page__panel h2 {
   margin: 0;
   color: rgba(0, 0, 0, 0.88);
 }
 
-.hmi-page__desc, p {
+.hmi-page__desc,
+.hmi-page__panel p {
   margin: 12px 0 0;
   color: rgba(0, 0, 0, 0.65);
   line-height: 1.6;
+}
+
+.hmi-page__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hmi-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.hmi-page__field span {
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hmi-page__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hmi-page__preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.hmi-page__preview nz-select {
+  width: 240px;
 }

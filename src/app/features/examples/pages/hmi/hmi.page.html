@@ -5,6 +5,31 @@
     <p class="hmi-page__desc">
       这里预留给 HMI 组态能力接入，后续可以在这个页面继续扩展画布、属性面板、组件库和配置存储。
     </p>
+
+    <div class="hmi-page__toolbar">
+      <label class="hmi-page__field">
+        <span>页面主题</span>
+        <nz-select [(ngModel)]="selectedTheme" nzPlaceHolder="请选择页面主题">
+          @for (theme of themeOptions; track theme.value) {
+            <nz-option [nzValue]="theme.value" [nzLabel]="theme.label"></nz-option>
+          }
+        </nz-select>
+      </label>
+    </div>
   </header>
-  
+
+  <div class="hmi-page__panel">
+    <h2>主题预览</h2>
+    <p>当前页面主题：<strong>{{ selectedTheme }}</strong></p>
+
+    <div class="hmi-page__preview">
+      <button nz-button nzType="primary">主要操作</button>
+
+      <nz-select [(ngModel)]="selectedStation" nzPlaceHolder="请选择产线">
+        @for (station of stationOptions; track station.value) {
+          <nz-option [nzValue]="station.value" [nzLabel]="station.label"></nz-option>
+        }
+      </nz-select>
+    </div>
+  </div>
 </section>
