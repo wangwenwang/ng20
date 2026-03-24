@@ -18,8 +18,6 @@ export class ChangeZorroConfigPageComponent {
   private readonly nzConfigService = inject(NzConfigService);
 
   protected readonly defaultPrimaryColor = '#1890ff';
-  protected readonly lessVariableName = '@xxx';
-  protected readonly lessVariableSource = 'src/styles/themes/default.less';
   protected readonly presetColors = [
     '#1890ff',
     '#1677ff',

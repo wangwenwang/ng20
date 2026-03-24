@@ -49,20 +49,6 @@ export class ExamplesLayoutComponent {
   ];
   protected readonly themeOptions: ThemeOption[] = [
     {
-      label: '默认蓝',
-      value: 'default-blue',
-      primaryColor: '#1890ff',
-      appTheme: 'default',
-      appearance: 'light'
-    },
-    {
-      label: '极客蓝',
-      value: 'geek-blue',
-      primaryColor: '#1677ff',
-      appTheme: 'default',
-      appearance: 'light'
-    },
-    {
       label: '紫罗兰',
       value: 'violet',
       primaryColor: '#722ed1',
@@ -73,13 +59,6 @@ export class ExamplesLayoutComponent {
       label: '青绿色',
       value: 'cyan',
       primaryColor: '#13c2c2',
-      appTheme: 'default',
-      appearance: 'light'
-    },
-    {
-      label: '活力橙',
-      value: 'orange',
-      primaryColor: '#fa8c16',
       appTheme: 'default',
       appearance: 'light'
     },
@@ -99,8 +78,8 @@ export class ExamplesLayoutComponent {
     }
   ];
 
-  protected selectedTheme = this.themeOptions[0]?.value ?? 'default-blue';
-  protected currentAppTheme: ThemeOption['appTheme'] = 'default';
+  protected selectedTheme = this.themeOptions[0]?.value ?? 'orange-light';
+  protected currentAppTheme: ThemeOption['appTheme'] = 'orange-light';
   protected currentAppearance: ThemeOption['appearance'] = 'light';
 
   constructor() {
