@@ -3,10 +3,10 @@ app-hmi-page.orange-light,
 .hmi-overlay-theme.orange-light {
 
   /* Primary */
-  --portal-primary-color: green;
+  --portal-primary-color: #008000;
 
   /* Buttons */
-  --portal-btn-primary-bg: green;
+  --portal-btn-primary-bg: #008000;
 
   /* Select */
   --portal-select-item-selected-color: green;
