@@ -30,6 +30,9 @@ export class HmiPageComponent {
   protected get overlayThemeClassNames(): string[] {
     return ['hmi-overlay-theme', this.selectedTheme];
   }
+  protected get overlayThemeWrapClassName(): string {
+    return `hmi-overlay-theme ${this.selectedTheme}`;
+  }
 
   protected onThemeChange(theme: HmiTheme | string | null): void {
     if (theme !== 'orange-light' && theme !== 'orange-dark') {

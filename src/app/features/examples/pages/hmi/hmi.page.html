@@ -67,7 +67,7 @@
         <header class="hmi-preview-card__header">
           <div>
             <h3>Modal</h3>
-            <p>预览 `nz-modal` 的基础打开、关闭和内容布局，主题适配后续再补。</p>
+            <p>预览 `nz-modal` 在当前 HMI 主题下的基础打开、关闭和弹窗样式效果。</p>
           </div>
           <button nz-button nzType="primary" (click)="openPreviewModal()">打开弹窗</button>
         </header>
@@ -77,6 +77,7 @@
 
   <nz-modal
     [(nzVisible)]="isPreviewModalVisible"
+    [nzWrapClassName]="overlayThemeWrapClassName"
     nzTitle="设备详情预览"
     nzOkText="确认"
     nzCancelText="关闭"
