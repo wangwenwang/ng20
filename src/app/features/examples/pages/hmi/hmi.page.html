@@ -72,6 +72,22 @@
           <button nz-button nzType="primary" (click)="openPreviewModal()">打开弹窗</button>
         </header>
       </article>
+
+      <article class="hmi-preview-card">
+        <header class="hmi-preview-card__header">
+          <div>
+            <h3>DatePicker</h3>
+            <p>预览 `nz-range-picker` 的基础示例，当前先不做主题适配。</p>
+          </div>
+        </header>
+
+        <div class="hmi-preview-card__body">
+          <label class="hmi-page__field hmi-page__field--preview">
+            <span>日期范围</span>
+            <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
+          </label>
+        </div>
+      </article>
     </div>
   </section>
 

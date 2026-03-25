@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
@@ -9,7 +10,7 @@ type HmiTheme = 'orange-light' | 'orange-dark';
 
 @Component({
   selector: 'app-hmi-page',
-  imports: [FormsModule, NzButtonModule, NzModalModule, NzSelectModule],
+  imports: [FormsModule, NzButtonModule, NzDatePickerModule, NzModalModule, NzSelectModule],
   templateUrl: './hmi.page.html',
   styleUrl: './hmi.page.less',
   host: {
@@ -25,6 +26,7 @@ export class HmiPageComponent {
   ];
 
   protected selectedTheme: HmiTheme = 'orange-light';
+  protected date: Date[] | null = null;
   protected isPreviewModalVisible = false;
   protected themeRenderKey = 0;
   protected get overlayThemeClassNames(): string[] {
@@ -49,5 +51,9 @@ export class HmiPageComponent {
 
   protected closePreviewModal(): void {
     this.isPreviewModalVisible = false;
+  }
+
+  protected onChange(value: Date[] | null): void {
+    this.date = value;
   }
 }
