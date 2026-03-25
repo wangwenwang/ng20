@@ -19,8 +19,7 @@
   </nz-sider>
 
   <nz-layout>
-    <div class="examples-layout__header">
-      <nz-select
+    <nz-header><nz-select
         [(ngModel)]="selectedTheme"
         nzPlaceHolder="请选择主题色"
         (ngModelChange)="onThemeChange($event)"
@@ -30,7 +29,7 @@
         }
       </nz-select>
       <button nz-button nzType="primary" style="margin-left: 10px;">Primary Button</button>
-    </div>
+    </nz-header>
     <nz-content class="examples-layout__content">
       <div class="al-container">
         <router-outlet />
