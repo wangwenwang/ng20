@@ -55,6 +55,20 @@ export class ExamplesLayoutComponent {
   ];
   protected readonly themeOptions: ThemeOption[] = [
     {
+      label: '晨曦橙',
+      value: 'orange-light',
+      primaryColor: '#fa8c16',
+      appTheme: 'orange-light',
+      appearance: 'light'
+    },
+    {
+      label: '暮夜橙',
+      value: 'orange-dark',
+      primaryColor: '#78359e',
+      appTheme: 'orange-dark',
+      appearance: 'light'
+    },
+    {
       label: '紫罗兰',
       value: 'violet',
       primaryColor: '#722ed1',
@@ -68,20 +82,6 @@ export class ExamplesLayoutComponent {
       appTheme: 'default',
       appearance: 'light'
     },
-    {
-      label: '晨曦橙',
-      value: 'orange-light',
-      primaryColor: '#fa8c16',
-      appTheme: 'orange-light',
-      appearance: 'light'
-    },
-    {
-      label: '暮夜橙',
-      value: 'orange-dark',
-      primaryColor: '#fa8c16',
-      appTheme: 'orange-dark',
-      appearance: 'dark'
-    }
   ];
 
   protected selectedTheme = this.themeOptions[0]?.value ?? 'orange-light';
