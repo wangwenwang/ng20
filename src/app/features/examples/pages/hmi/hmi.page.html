@@ -1,12 +1,11 @@
 <section class="hmi-page">
-  <header class="hmi-page__hero">
-    <p class="hmi-page__eyebrow">HMI</p>
-    <h1>HMI 页面</h1>
-    <p class="hmi-page__desc">
-      这里预留给 HMI 组态能力接入，后续可以在这个页面继续扩展画布、属性面板、组件库和配置存储。
-    </p>
+  <header class="hmi-page__header">
+    <div class="hmi-page__theme-panel">
+      <div class="hmi-page__theme-info">
+        <span class="hmi-page__theme-label">当前主题</span>
+        <strong>{{ selectedTheme }}</strong>
+      </div>
 
-    <div class="hmi-page__toolbar">
       <label class="hmi-page__field">
         <span>页面主题</span>
         @for (renderKey of [themeRenderKey]; track renderKey) {
@@ -22,25 +21,62 @@
         }
       </label>
     </div>
+
+    <div class="hmi-page__heading">
+      <p class="hmi-page__eyebrow">HMI</p>
+      <h1>组件主题预览</h1>
+      <p class="hmi-page__desc">
+        左侧负责切换当前 HMI 页面主题，右侧展示页面说明。下方按组件类型分块预览，后续可以继续扩展 modal、drawer、date-picker 等浮层组件。
+      </p>
+    </div>
   </header>
 
-  <div class="hmi-page__panel">
-    <h2>主题预览</h2>
-    <p>当前页面主题：<strong>{{ selectedTheme }}</strong></p>
-
-    <div class="hmi-page__preview">
-      <button nz-button nzType="primary">主要操作</button>
-
-      @for (renderKey of [themeRenderKey]; track renderKey) {
-        <nz-select
-          [(ngModel)]="selectedStation"
-          [nzDropdownClassName]="overlayThemeClassNames"
-          nzPlaceHolder="请选择产线">
-          @for (station of stationOptions; track station.value) {
-            <nz-option [nzValue]="station.value" [nzLabel]="station.label"></nz-option>
-          }
-        </nz-select>
-      }
+  <section class="hmi-page__preview-section">
+    <div class="hmi-page__section-heading">
+      <h2>组件预览</h2>
+      <p>每个预览卡片展示一种组件在当前主题下的效果，方便后续逐步补充更多 HMI 组态组件。</p>
     </div>
-  </div>
+
+    <div class="hmi-page__preview-grid">
+      <article class="hmi-preview-card">
+        <header class="hmi-preview-card__header">
+          <div>
+            <h3>Select</h3>
+            <p>预览 `nz-select` 在当前 HMI 主题下的输入框和下拉面板效果。</p>
+          </div>
+          <button nz-button nzType="primary">主要操作</button>
+        </header>
+
+        <div class="hmi-preview-card__body">
+          <label class="hmi-page__field hmi-page__field--preview">
+            <span>产线选择</span>
+            @for (renderKey of [themeRenderKey]; track renderKey) {
+              <nz-select
+                [(ngModel)]="selectedStation"
+                [nzDropdownClassName]="overlayThemeClassNames"
+                nzPlaceHolder="请选择产线">
+                @for (station of stationOptions; track station.value) {
+                  <nz-option [nzValue]="station.value" [nzLabel]="station.label"></nz-option>
+                }
+              </nz-select>
+            }
+          </label>
+        </div>
+      </article>
+
+      <article class="hmi-preview-card hmi-preview-card--placeholder">
+        <header class="hmi-preview-card__header">
+          <div>
+            <h3>Modal</h3>
+            <p>后续在这里补充 `nz-modal` 的主题预览和浮层样式验证。</p>
+          </div>
+        </header>
+
+        <div class="hmi-preview-card__placeholder">
+          <span>待接入</span>
+          <p>建议后续复用同一套 `overlayThemeClassNames` 作用域类处理浮层主题。</p>
+        </div>
+      </article>
+    </div>
+  </section>
 </section>
