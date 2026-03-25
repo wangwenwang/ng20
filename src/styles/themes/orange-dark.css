@@ -10,4 +10,13 @@ app-hmi-page.orange-dark,
 
   /* Select */
   --portal-select-item-selected-color: red;
+
+  /* TimePicker */
+  --portal-picker-bg: red;
+  --portal-dropdown-selected-color: red;
+  --portal-dropdown-selected-bg: red;
+  --portal-picker-basic-cell-hover-color: red;
+  --portal-picker-date-hover-range-color: red;
+  --portal-picker-date-hover-range-border-color: red;
+  --portal-picker-basic-cell-active-with-range-color: red;
 }
