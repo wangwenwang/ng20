@@ -135,34 +135,16 @@
   justify-content: space-between;
 }
 
-.hmi-preview-card__body {
+.hmi-modal-preview {
   display: flex;
-  flex: 1;
-  align-items: center;
-}
-
-.hmi-preview-card__placeholder {
-  display: flex;
-  flex: 1;
   flex-direction: column;
-  justify-content: center;
-  border: 1px dashed rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.72);
+  gap: 16px;
 }
 
-.hmi-preview-card__placeholder span {
-  color: #1890ff;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hmi-preview-card--placeholder {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 247, 250, 0.92));
+.hmi-modal-preview p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
 }
 
 .hmi-page__theme-panel nz-select,

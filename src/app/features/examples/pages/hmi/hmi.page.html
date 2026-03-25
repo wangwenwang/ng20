@@ -49,34 +49,43 @@
 
         <div class="hmi-preview-card__body">
           <label class="hmi-page__field hmi-page__field--preview">
-            <span>产线选择</span>
+            <span>基础示例</span>
             @for (renderKey of [themeRenderKey]; track renderKey) {
               <nz-select
-                [(ngModel)]="selectedStation"
-                [nzDropdownClassName]="overlayThemeClassNames"
-                nzPlaceHolder="请选择产线">
-                @for (station of stationOptions; track station.value) {
-                  <nz-option [nzValue]="station.value" [nzLabel]="station.label"></nz-option>
-                }
+                ngModel="lucy"
+                [nzDropdownClassName]="overlayThemeClassNames">
+                <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
               </nz-select>
             }
           </label>
         </div>
       </article>
 
-      <article class="hmi-preview-card hmi-preview-card--placeholder">
+      <article class="hmi-preview-card">
         <header class="hmi-preview-card__header">
           <div>
             <h3>Modal</h3>
-            <p>后续在这里补充 `nz-modal` 的主题预览和浮层样式验证。</p>
+            <p>预览 `nz-modal` 的基础打开、关闭和内容布局，主题适配后续再补。</p>
           </div>
+          <button nz-button nzType="primary" (click)="openPreviewModal()">打开弹窗</button>
         </header>
-
-        <div class="hmi-preview-card__placeholder">
-          <span>待接入</span>
-          <p>建议后续复用同一套 `overlayThemeClassNames` 作用域类处理浮层主题。</p>
-        </div>
       </article>
     </div>
   </section>
+
+  <nz-modal
+    [(nzVisible)]="isPreviewModalVisible"
+    nzTitle="设备详情预览"
+    nzOkText="确认"
+    nzCancelText="关闭"
+    (nzOnCancel)="closePreviewModal()"
+    (nzOnOk)="closePreviewModal()">
+    <ng-container *nzModalContent>
+      <div class="hmi-modal-preview">
+        <p>这是 HMI 页面里的 `nz-modal` 预览内容，用于验证后续浮层组件的布局和交互接入方式。</p>
+      </div>
+    </ng-container>
+  </nz-modal>
 </section>
