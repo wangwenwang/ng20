@@ -1,6 +1,4 @@
-html.orange-dark,
-app-hmi-page.orange-dark,
-.hmi-overlay-theme.orange-dark {
+.theme-orange-dark {
 
   /* Primary */
   --portal-primary-color: red;

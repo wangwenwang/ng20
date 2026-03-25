@@ -18,7 +18,7 @@ interface ThemeOption {
   readonly label: string;
   readonly value: string;
   readonly primaryColor: string;
-  readonly appTheme: 'default' | 'orange-light' | 'orange-dark';
+  readonly appTheme: 'theme-default' | 'theme-orange-light' | 'theme-orange-dark';
   readonly appearance: 'light' | 'dark';
 }
 
@@ -33,7 +33,7 @@ export class ExamplesLayoutComponent {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly nzConfigService = inject(NzConfigService);
-  private readonly appThemeClasses = ['orange-light', 'orange-dark'] as const;
+  private readonly appThemeClasses = ['theme-orange-light', 'theme-orange-dark'] as const;
 
   protected readonly menuItems: ExampleMenuItem[] = [
     {
@@ -56,36 +56,36 @@ export class ExamplesLayoutComponent {
   protected readonly themeOptions: ThemeOption[] = [
     {
       label: '晨曦橙',
-      value: 'orange-light',
+      value: 'theme-orange-light',
       primaryColor: '#fa8c16',
-      appTheme: 'orange-light',
+      appTheme: 'theme-orange-light',
       appearance: 'light'
     },
     {
       label: '暮夜橙',
-      value: 'orange-dark',
+      value: 'theme-orange-dark',
       primaryColor: '#78359e',
-      appTheme: 'orange-dark',
+      appTheme: 'theme-orange-dark',
       appearance: 'light'
     },
     {
       label: '紫罗兰',
       value: 'violet',
       primaryColor: '#722ed1',
-      appTheme: 'default',
+      appTheme: 'theme-default',
       appearance: 'light'
     },
     {
       label: '青绿色',
       value: 'cyan',
       primaryColor: '#13c2c2',
-      appTheme: 'default',
+      appTheme: 'theme-default',
       appearance: 'light'
     },
   ];
 
-  protected selectedTheme = this.themeOptions[0]?.value ?? 'orange-light';
-  protected currentAppTheme: ThemeOption['appTheme'] = 'orange-light';
+  protected selectedTheme = this.themeOptions[0]?.value ?? 'theme-orange-light';
+  protected currentAppTheme: ThemeOption['appTheme'] = 'theme-orange-light';
   protected currentAppearance: ThemeOption['appearance'] = 'light';
 
   constructor() {
@@ -113,7 +113,7 @@ export class ExamplesLayoutComponent {
   }
 
   protected get isOrangeLightTheme(): boolean {
-    return this.currentAppTheme === 'orange-light';
+    return this.currentAppTheme === 'theme-orange-light';
   }
 
   private applyTheme(theme: ThemeOption): void {
@@ -123,7 +123,7 @@ export class ExamplesLayoutComponent {
     this.currentAppearance = theme.appearance;
     root.classList.remove(...this.appThemeClasses);
 
-    if (theme.appTheme !== 'default') {
+    if (theme.appTheme !== 'theme-default') {
       root.classList.add(theme.appTheme);
     }
 
