@@ -9,11 +9,17 @@
     <div class="hmi-page__toolbar">
       <label class="hmi-page__field">
         <span>页面主题</span>
-        <nz-select [(ngModel)]="selectedTheme" nzPlaceHolder="请选择页面主题">
-          @for (theme of themeOptions; track theme.value) {
-            <nz-option [nzValue]="theme.value" [nzLabel]="theme.label"></nz-option>
-          }
-        </nz-select>
+        @for (renderKey of [themeRenderKey]; track renderKey) {
+          <nz-select
+            [ngModel]="selectedTheme"
+            [nzDropdownClassName]="overlayThemeClassNames"
+            (ngModelChange)="onThemeChange($event)"
+            nzPlaceHolder="请选择页面主题">
+            @for (theme of themeOptions; track theme.value) {
+              <nz-option [nzValue]="theme.value" [nzLabel]="theme.label"></nz-option>
+            }
+          </nz-select>
+        }
       </label>
     </div>
   </header>
@@ -25,11 +31,16 @@
     <div class="hmi-page__preview">
       <button nz-button nzType="primary">主要操作</button>
 
-      <nz-select [(ngModel)]="selectedStation" nzPlaceHolder="请选择产线">
-        @for (station of stationOptions; track station.value) {
-          <nz-option [nzValue]="station.value" [nzLabel]="station.label"></nz-option>
-        }
-      </nz-select>
+      @for (renderKey of [themeRenderKey]; track renderKey) {
+        <nz-select
+          [(ngModel)]="selectedStation"
+          [nzDropdownClassName]="overlayThemeClassNames"
+          nzPlaceHolder="请选择产线">
+          @for (station of stationOptions; track station.value) {
+            <nz-option [nzValue]="station.value" [nzLabel]="station.label"></nz-option>
+          }
+        </nz-select>
+      }
     </div>
   </div>
 </section>

@@ -30,4 +30,17 @@ export class HmiPageComponent {
 
   protected selectedTheme: HmiTheme = 'orange-light';
   protected selectedStation = this.stationOptions[0]?.value ?? 'line-1';
+  protected themeRenderKey = 0;
+  protected get overlayThemeClassNames(): string[] {
+    return ['hmi-overlay-theme', this.selectedTheme];
+  }
+
+  protected onThemeChange(theme: HmiTheme | string | null): void {
+    if (theme !== 'orange-light' && theme !== 'orange-dark') {
+      return;
+    }
+
+    this.selectedTheme = theme;
+    this.themeRenderKey += 1;
+  }
 }

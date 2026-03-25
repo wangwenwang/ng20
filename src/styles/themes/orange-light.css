@@ -1,5 +1,6 @@
 html.orange-light,
-app-hmi-page.orange-light {
+app-hmi-page.orange-light,
+.hmi-overlay-theme.orange-light {
 
   /* Primary */
   --portal-primary-color: green;
