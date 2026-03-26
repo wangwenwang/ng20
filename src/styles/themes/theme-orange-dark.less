@@ -1,5 +1,9 @@
 .theme-orange-dark {
 
+  /* 把组件内部参与计算的less变量，虚拟出css变量 */
+  --@{var-prefix}-border-color-split: #666;
+  
+
   /* Primary */
   --@{var-prefix}-text-color: #fff;
   --@{var-prefix}-bg-color: #0a0a0a;
@@ -9,6 +13,10 @@
   --@{var-prefix}-disabled-color: rgba(255, 255, 255, 0.3); /* 自己新增的样式变量，解决@disabled-color参与计算，不能插入css变量问题 */
   --@{var-prefix}-item-hover-bg: #434343;
   --@{var-prefix}-primary-color-hover: var(--@{var-prefix}-primary-5);
+  --@{var-prefix}-background-color-light: #333;
+
+  /* Table */
+  --@{var-prefix}-table-header-bg: #434343;
 
   /* Menu */
   --@{var-prefix}-menu-item-active-bg: var(--@{var-prefix}-primary-color);

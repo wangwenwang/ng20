@@ -13,6 +13,26 @@
 // nzTheme == dark，背景读取 @menu-dark-item-active-bg，继承 @primary-color。
 
 
+/* 继承参与计算的less变量 */
+
+/* primary-color */
+// ~'var(--@{var-prefix}-primary-color)'加35%透明度
+@picker-basic-cell-active-with-range-color:  ~'var(--@{var-prefix}-primary-1)';
+@picker-basic-cell-hover-with-range-color: color-mix(in srgb, ~'var(--@{var-prefix}-primary-color)' 35%, transparent 65%);
+@picker-date-hover-range-border-color: color-mix(in srgb, ~'var(--@{var-prefix}-primary-color)' 20%, transparent 80%);
+
+@popover-customize-border-color: ~'var(--@{var-prefix}-border-color-split)';
+@select-selection-item-border-color: ~'var(--@{var-prefix}-border-color-split)';
+@cascader-menu-border-color-split: ~'var(--@{var-prefix}-border-color-split)';
+@anchor-border-color: ~'var(--@{var-prefix}-border-color-split)';
+@modal-header-border-color-split: ~'var(--@{var-prefix}-border-color-split)';
+@modal-footer-border-color-split: ~'var(--@{var-prefix}-border-color-split)';
+@picker-border-color: ~'var(--@{var-prefix}-border-color-split)';
+@rate-star-bg: ~'var(--@{var-prefix}-border-color-split)';
+@slider-dot-border-color: ~'var(--@{var-prefix}-border-color-split)';
+@timeline-color: ~'var(--@{var-prefix}-border-color-split)';
+@process-tail-color: ~'var(--@{var-prefix}-border-color-split)';
+
 // Primary
 @primary-2: ~'var(--@{var-prefix}-primary-2)';
 @primary-3: ~'var(--@{var-prefix}-primary-3)';
@@ -30,8 +50,12 @@
 @border-color-base: ~'var(--@{var-prefix}-border-color-base)';
 @item-hover-bg: ~'var(--@{var-prefix}-item-hover-bg)';
 @primary-color-hover: ~'var(--@{var-prefix}-primary-color-hover)';
+@background-color-light: ~'var(--@{var-prefix}-background-color-light)'; /* 表格hover背景色 */
 
 /* Input / Select */
+
+/* Table */
+@table-header-bg: ~'var(--@{var-prefix}-table-header-bg)';
 
 // Menu
 @menu-item-active-bg: ~'var(--@{var-prefix}-menu-item-active-bg)';
@@ -50,10 +74,10 @@
 @select-item-selected-bg: ~'var(--@{var-prefix}-select-item-selected-color)';
 
 // TimePicker
-@picker-bg: ~'var(--@{var-prefix}-picker-bg)';
-@dropdown-selected-color: ~'var(--@{var-prefix}-dropdown-selected-color)';
-@dropdown-selected-bg: ~'var(--@{var-prefix}-dropdown-selected-bg)';
-@picker-basic-cell-hover-color: ~'var(--@{var-prefix}-picker-basic-cell-hover-color)';
-@picker-date-hover-range-color: ~'var(--@{var-prefix}-picker-date-hover-range-color)';
-@picker-date-hover-range-border-color: ~'var(--@{var-prefix}-picker-date-hover-range-border-color)';
-@picker-basic-cell-active-with-range-color: ~'var(--@{var-prefix}-picker-basic-cell-active-with-range-color)';
+// @picker-bg: ~'var(--@{var-prefix}-picker-bg)';
+// @dropdown-selected-color: ~'var(--@{var-prefix}-dropdown-selected-color)';
+// @dropdown-selected-bg: ~'var(--@{var-prefix}-dropdown-selected-bg)';
+// @picker-basic-cell-hover-color: ~'var(--@{var-prefix}-picker-basic-cell-hover-color)';
+// @picker-date-hover-range-color: ~'var(--@{var-prefix}-picker-date-hover-range-color)';
+// @picker-date-hover-range-border-color: ~'var(--@{var-prefix}-picker-date-hover-range-border-color)';
+// @picker-basic-cell-active-with-range-color: ~'var(--@{var-prefix}-picker-basic-cell-active-with-range-color)';
