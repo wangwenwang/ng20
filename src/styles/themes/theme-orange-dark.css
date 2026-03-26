@@ -10,9 +10,11 @@
   --portal-menu-item-active-bg: var(--portal-primary-color);
   --portal-menu-item-active-color: #fff; /* 自己新增的样式变量，解决nz-menu nzTheme=light时，active文字颜色没有token的问题 */
   --portal-menu-highlight-color: var(--portal-primary-color);
+  --portal-menu-item-group-title-color: var(--portal-text-color);
 
   /* Layout */
-  --portal-layout-header-background: #222;
+  --portal-layout-header-background: var(--portal-component-background);
+  --portal-layout-sider-background: var(--portal-component-background);
 
   /* Buttons */
   --portal-btn-primary-bg: var(--portal-primary-color);
