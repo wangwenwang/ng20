@@ -1,12 +1,27 @@
 @import "../../../node_modules/ng-zorro-antd/ng-zorro-antd.less";
-@import (multiple) '../../../node_modules/ng-zorro-antd/src/style/themes/default.less'; // 可删除，就是方便查看默认值
+@import (multiple) '../../../node_modules/ng-zorro-antd/src/style/themes/default.less'; // 上面已导入，这里可删除，就是方便查看默认值
 @import '../themes/base.less';
+
+// [nzTheme] 注意事项
+
+// 1.<nz-sider> 默认值dark（建议使用dark，变量不用加light）。
+// nzTheme == dark，背景读取 @layout-sider-background，继承 @layout-header-background。
+// nzTheme == light，背景读取 @layout-sider-background-light，继承 #fff。
+
+// 2.nz-menu 指令 默认值light（建议使用light，变量不用加dark）。
+// nzTheme == light，背景读取 @menu-item-active-bg，继承 @primary-1。
+// nzTheme == dark，背景读取 @menu-dark-item-active-bg，继承 @primary-color。
+
 
 // Primary
 @text-color: var(--portal-text-color);
 @layout-body-background: var(--portal-bg-color);
 @component-background: var(--portal-component-background);
 @heading-color: var(--portal-heading-color);
+
+
+// Menu
+@menu-item-active-bg: var(--portal-menu-item-active-bg);
 
 // Layout
 @layout-header-background: var(--portal-layout-header-background);

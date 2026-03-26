@@ -1,17 +1,19 @@
 .theme-orange-dark {
 
   /* Primary */
-  --portal-primary-color: #db501a;
-  --portal-component-background: #222;
   --portal-text-color: #fff;
   --portal-bg-color: #0a0a0a;
+  --portal-component-background: #222;
   --portal-heading-color: #fff;
+
+  /* Menu */
+  --portal-menu-item-active-bg: color-mix(in srgb, var(--portal-primary-color) 30%, transparent 70%);
 
   /* Layout */
   --portal-layout-header-background: #222;
 
   /* Buttons */
-  --portal-btn-primary-bg: #db501a;
+  --portal-btn-primary-bg: var(--portal-primary-color);
 
   /* Select */
   --portal-select-item-selected-color: color-mix(in srgb, var(--portal-component-background) 80%, var(--portal-primary-color) 20%);

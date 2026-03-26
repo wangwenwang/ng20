@@ -15,7 +15,6 @@
       flex-direction: column;
       gap: 4px;
       padding: 20px 16px 12px;
-      color: rgba(0, 0, 0, 0.88);
 
       .examples-layout__brand-title {
         font-size: 18px;
@@ -24,7 +23,6 @@
 
       .examples-layout__brand-subtitle {
         font-size: 12px;
-        color: rgba(0, 0, 0, 0.45);
         text-transform: uppercase;
         letter-spacing: 0.08em;
       }
