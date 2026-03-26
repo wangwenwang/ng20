@@ -1,0 +1,28 @@
+/* 全局覆盖 NgZorro：在 default.less 中最后 import，保证在 ng-zorro-antd 之后生效。按组件分块书写即可。 */
+
+/* Buttons */
+
+/* Form */
+
+/* Input / Select */
+
+/* Table */
+
+/* Modal / Drawer */
+
+/* Menu / Layout */
+// nz-menu nzTheme=light时，active文字颜色没有token。
+.ant-menu {
+  .ant-menu-item {
+    &.ant-menu-item-selected {
+      a {
+        color: red;
+      }
+    }
+  }
+}
+
+
+/* DatePicker / TimePicker */
+
+/* 其他 */
