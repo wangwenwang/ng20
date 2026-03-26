@@ -63,28 +63,28 @@ export class ExamplesLayoutComponent {
       value: 'theme-orange-dark',
       primaryColor: '#78359e',
       appTheme: 'theme-orange-dark',
-      appearance: 'light'
+      appearance: 'dark'
     },
     {
       label: '橙白',
       value: 'theme-orange-light',
       primaryColor: '#fa8c16',
       appTheme: 'theme-orange-light',
-      appearance: 'light'
+      appearance: 'dark'
     },
     {
       label: '默认',
       value: 'theme-default',
       primaryColor: '#722ed1',
       appTheme: 'theme-default',
-      appearance: 'light'
+      appearance: 'dark'
     },
     {
       label: '天空',
       value: 'theme-sky',
       primaryColor: '#13c2c2',
       appTheme: 'theme-sky',
-      appearance: 'light'
+      appearance: 'dark'
     },
   ];
 
