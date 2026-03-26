@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { generate as generateAntColorPalette } from '@ant-design/colors';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -56,7 +57,7 @@ export class ExamplesLayoutComponent {
     {
       label: '橙黑',
       value: 'theme-orange-dark',
-      primaryColor: '#78359e',
+      primaryColor: '#db501a',
       appTheme: 'theme-orange-dark',
     },
     {
@@ -81,7 +82,13 @@ export class ExamplesLayoutComponent {
 
   protected selectedTheme = this.themeOptions[0]?.value;
   protected currentAppTheme: ThemeOption['appTheme'] = 'theme-orange-light';
-    constructor() {
+
+  /** 与当前主题一致，且已写入 `:root` 的 `--primary-color-1`～`--primary-color-10`。 */
+  protected primaryColorPalette: readonly string[] = generateAntColorPalette(
+    this.themeOptions[0]?.primaryColor ?? '#722ed1'
+  );
+
+  constructor() {
     const defaultTheme = this.themeOptions[0];
 
     if (defaultTheme) {
@@ -107,6 +114,14 @@ export class ExamplesLayoutComponent {
 
     root.classList.remove(...this.appThemeClasses);
     root.classList.add(theme.appTheme);
+    this.currentAppTheme = theme.appTheme;
+
+    const palette = generateAntColorPalette(theme.primaryColor);
+    this.primaryColorPalette = palette;
+    root.style.setProperty('--portal-primary-color', theme.primaryColor);
+    for (let i = 0; i < palette.length; i += 1) {
+      root.style.setProperty(`--portal-primary-color-${i + 1}`, palette[i]!);
+    }
   }
 
   protected isActive(path: string): boolean {
