@@ -1,0 +1,33 @@
+.theme-orange-dark {
+
+  /* Primary */
+  --@{var-prefix}-text-color: #fff;
+  --@{var-prefix}-bg-color: #0a0a0a;
+  --@{var-prefix}-component-background: #222;
+  --@{var-prefix}-heading-color: #fff;
+
+  /* Menu */
+  --@{var-prefix}-menu-item-active-bg: var(--@{var-prefix}-primary-color);
+  --@{var-prefix}-menu-item-active-color: #fff; /* 自己新增的样式变量，解决nz-menu nzTheme=light时，active文字颜色没有token的问题 */
+  --@{var-prefix}-menu-highlight-color: var(--@{var-prefix}-primary-color);
+  --@{var-prefix}-menu-item-group-title-color: var(--@{var-prefix}-text-color);
+
+  /* Layout */
+  --@{var-prefix}-layout-header-background: var(--@{var-prefix}-component-background);
+  --@{var-prefix}-layout-sider-background: var(--@{var-prefix}-component-background);
+
+  /* Buttons */
+  --@{var-prefix}-btn-primary-bg: var(--@{var-prefix}-primary-color);
+
+  /* Select */
+  --@{var-prefix}-select-item-selected-color: color-mix(in srgb, var(--@{var-prefix}-component-background) 80%, var(--@{var-prefix}-primary-color) 20%);
+
+  /* TimePicker */
+  --@{var-prefix}-picker-bg: red;
+  --@{var-prefix}-dropdown-selected-color: red;
+  --@{var-prefix}-dropdown-selected-bg: red;
+  --@{var-prefix}-picker-basic-cell-hover-color: red;
+  --@{var-prefix}-picker-date-hover-range-color: red;
+  --@{var-prefix}-picker-date-hover-range-border-color: red;
+  --@{var-prefix}-picker-basic-cell-active-with-range-color: red;
+}

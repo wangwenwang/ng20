@@ -15,9 +15,9 @@
   .ant-menu-item {
     &.ant-menu-item-selected {
       /* 自己新增的样式变量，解决nz-menu nzTheme=light时，active文字颜色没有token的问题 */
-      color: var(--portal-menu-item-active-color);
+      color: ~'var(--@{var-prefix}-menu-item-active-color)';
       a {
-        color: var(--portal-menu-item-active-color);
+        color: ~'var(--@{var-prefix}-menu-item-active-color)';
       }
     }
   }

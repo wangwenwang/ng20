@@ -118,9 +118,9 @@ export class ExamplesLayoutComponent {
 
     const palette = generateAntColorPalette(theme.primaryColor);
     this.primaryColorPalette = palette;
-    root.style.setProperty('--portal-primary-color', theme.primaryColor);
+    root.style.setProperty('--po-primary-color', theme.primaryColor);
     for (let i = 0; i < palette.length; i += 1) {
-      root.style.setProperty(`--portal-primary-color-${i + 1}`, palette[i]!);
+      root.style.setProperty(`--po-primary-color-${i + 1}`, palette[i]!);
     }
   }
 
