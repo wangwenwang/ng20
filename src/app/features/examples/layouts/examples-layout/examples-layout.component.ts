@@ -79,7 +79,7 @@ export class ExamplesLayoutComponent {
   protected selectedTheme = this.themeOptions[0]?.value;
   protected currentAppTheme: ThemeOption['appTheme'] = 'theme-orange-light';
 
-  /** 与当前主题一致，且已写入 `:root` 的 `--primary-color-1`～`--primary-color-10`。 */
+  /** 与当前主题一致，且已写入 `:root` 的 `--primary-1`～`--primary-10`。 */
   protected primaryColorPalette: readonly string[] = generateAntColorPalette(
     this.themeOptions[0]?.primaryColor ?? '#722ed1'
   );
@@ -116,7 +116,7 @@ export class ExamplesLayoutComponent {
     this.primaryColorPalette = palette;
     root.style.setProperty('--po-primary-color', theme.primaryColor);
     for (let i = 0; i < palette.length; i += 1) {
-      root.style.setProperty(`--po-primary-color-${i + 1}`, palette[i]!);
+      root.style.setProperty(`--po-primary-${i + 1}`, palette[i]!);
     }
   }
 

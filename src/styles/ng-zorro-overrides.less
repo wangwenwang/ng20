@@ -5,6 +5,10 @@
 /* Form */
 
 /* Input / Select */
+.ant-select-arrow {
+  /* 自己新增的样式变量，解决@disabled-color参与计算，不能插入css变量问题 */
+  color: ~'var(--@{var-prefix}-disabled-color)';
+}
 
 /* Table */
 
