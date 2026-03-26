@@ -7,7 +7,9 @@
   --portal-heading-color: #fff;
 
   /* Menu */
-  --portal-menu-item-active-bg: color-mix(in srgb, var(--portal-primary-color) 30%, transparent 70%);
+  --portal-menu-item-active-bg: var(--portal-primary-color);
+  --portal-menu-item-active-color: #fff; /* 自己新增的样式变量，解决nz-menu nzTheme=light时，active文字颜色没有token的问题 */
+  --portal-menu-highlight-color: var(--portal-primary-color);
 
   /* Layout */
   --portal-layout-header-background: #222;

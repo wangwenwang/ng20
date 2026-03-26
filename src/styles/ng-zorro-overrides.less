@@ -11,12 +11,12 @@
 /* Modal / Drawer */
 
 /* Menu / Layout */
-// nz-menu nzTheme=light时，active文字颜色没有token。
 .ant-menu {
   .ant-menu-item {
     &.ant-menu-item-selected {
       a {
-        color: red;
+        /* 自己新增的样式变量，解决nz-menu nzTheme=light时，active文字颜色没有token的问题 */
+        color: var(--portal-menu-item-active-color);
       }
     }
   }
