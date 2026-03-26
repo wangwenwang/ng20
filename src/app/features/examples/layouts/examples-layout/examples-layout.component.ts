@@ -41,10 +41,6 @@ export class ExamplesLayoutComponent {
       path: '/ng-zorro-playground'
     },
     {
-      label: 'Change Zorro Config',
-      path: '/change-zorro-config'
-    },
-    {
       label: 'Table Demo',
       path: '/table-demo'
     },

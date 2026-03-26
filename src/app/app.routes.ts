@@ -43,13 +43,6 @@ export const routes: Routes = [
           ).then(m => pickStandaloneComponent(m, 'ng-zorro-playground'))
       },
       {
-        path: 'change-zorro-config',
-        loadComponent: () =>
-          import(
-            './features/examples/pages/change-zorro-config/change-zorro-config.page'
-          ).then(m => m.ChangeZorroConfigPageComponent)
-      },
-      {
         path: 'table-demo',
         loadComponent: () =>
           import('./features/examples/pages/table-demo/table-demo.page').then(
