@@ -6,11 +6,13 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
+import { NzDemoMenuInlineComponent } from '../../ng-zorro-official-demos/menu/nz-demo-menu-inline.component';
+
 type HmiTheme = 'theme-orange-light' | 'theme-orange-dark';
 
 @Component({
   selector: 'app-hmi-page',
-  imports: [FormsModule, NzButtonModule, NzDatePickerModule, NzModalModule, NzSelectModule],
+  imports: [FormsModule, NzButtonModule, NzDatePickerModule, NzDemoMenuInlineComponent, NzModalModule, NzSelectModule],
   templateUrl: './hmi.page.html',
   styleUrl: './hmi.page.less',
   host: {
