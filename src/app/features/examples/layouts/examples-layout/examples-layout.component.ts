@@ -112,7 +112,7 @@ export class ExamplesLayoutComponent {
     root.classList.add(theme.appTheme);
     this.currentAppTheme = theme.appTheme;
 
-    const palette = generateAntColorPalette(theme.primaryColor);
+    const palette = generateAntColorPalette(theme.primaryColor, { theme: 'dark' });
     this.primaryColorPalette = palette;
     root.style.setProperty('--po-primary-color', theme.primaryColor);
     for (let i = 0; i < palette.length; i += 1) {
