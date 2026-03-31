@@ -5,8 +5,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { EXAMPLE_THEME_OPTIONS, type AppThemeClass } from '../../shared/example-themes';
 
-type HmiTheme = 'theme-orange-light' | 'theme-orange-dark';
+type HmiTheme = (typeof EXAMPLE_THEME_OPTIONS)[number]['value'];
 
 @Component({
   selector: 'app-hmi-page',
@@ -14,28 +15,37 @@ type HmiTheme = 'theme-orange-light' | 'theme-orange-dark';
   templateUrl: './hmi.page.html',
   styleUrl: './hmi.page.less',
   host: {
-    '[class.theme-orange-light]': "selectedTheme === 'theme-orange-light'",
-    '[class.theme-orange-dark]': "selectedTheme === 'theme-orange-dark'"
+    '[class.theme-orange-light]': "currentAppTheme === 'theme-orange-light'",
+    '[class.theme-violet]': "currentAppTheme === 'theme-violet'",
+    '[class.theme-cyan]': "currentAppTheme === 'theme-cyan'",
+    '[class.theme-blue]': "currentAppTheme === 'theme-blue'",
+    '[class.theme-green]': "currentAppTheme === 'theme-green'"
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HmiPageComponent {
-  protected readonly themeOptions: ReadonlyArray<{ label: string; value: HmiTheme }> = [
-    { label: '晨曦橙', value: 'theme-orange-light' },
-    { label: '暮夜橙', value: 'theme-orange-dark' }
-  ];
+  protected readonly themeOptions = EXAMPLE_THEME_OPTIONS;
 
   protected selectedTheme: HmiTheme = 'theme-orange-light';
+  protected currentAppTheme: AppThemeClass = 'theme-orange-light';
   protected date: Date[] | null = null;
   protected isPreviewModalVisible = false;
   protected themeRenderKey = 0;
 
   protected onThemeChange(theme: HmiTheme | string | null): void {
-    if (theme !== 'theme-orange-light' && theme !== 'theme-orange-dark') {
+    if (!theme) {
       return;
     }
 
-    this.selectedTheme = theme;
+    const selectedTheme = this.themeOptions.find(option => option.value === theme);
+
+    if (!selectedTheme) {
+      return;
+    }
+
+    this.selectedTheme = selectedTheme.value;
+    this.currentAppTheme = selectedTheme.appTheme;
+    console.log(selectedTheme);
     this.themeRenderKey += 1;
   }
 

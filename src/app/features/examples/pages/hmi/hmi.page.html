@@ -11,7 +11,7 @@
         @for (renderKey of [themeRenderKey]; track renderKey) {
           <nz-select
             [ngModel]="selectedTheme"
-            [nzDropdownClassName]="selectedTheme"
+            [nzDropdownClassName]="['hmi-overlay-theme', currentAppTheme]"
             (ngModelChange)="onThemeChange($event)"
             nzPlaceHolder="请选择页面主题">
             @for (theme of themeOptions; track theme.value) {
@@ -53,7 +53,7 @@
             @for (renderKey of [themeRenderKey]; track renderKey) {
               <nz-select
                 ngModel="lucy"
-                [nzDropdownClassName]="selectedTheme">
+                [nzDropdownClassName]="['hmi-overlay-theme', currentAppTheme]">
                 <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
                 <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
                 <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
@@ -87,7 +87,7 @@
             @for (renderKey of [themeRenderKey]; track renderKey) {
               <nz-range-picker
                 [(ngModel)]="date"
-                [nzDropdownClassName]="selectedTheme"
+                [nzDropdownClassName]="'hmi-overlay-theme ' + currentAppTheme"
                 (ngModelChange)="onChange($event)"></nz-range-picker>
             }
           </label>
@@ -98,7 +98,7 @@
 
   <nz-modal
     [(nzVisible)]="isPreviewModalVisible"
-    [nzWrapClassName]="selectedTheme"
+    [nzWrapClassName]="'hmi-overlay-theme ' + currentAppTheme"
     nzTitle="设备详情预览"
     nzOkText="确认"
     nzCancelText="关闭"

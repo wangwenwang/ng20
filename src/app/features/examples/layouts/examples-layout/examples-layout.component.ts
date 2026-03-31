@@ -8,18 +8,15 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import {
+  APPLIED_APP_THEME_CLASSES,
+  EXAMPLE_THEME_OPTIONS,
+  type ExampleThemeOption
+} from '../../shared/example-themes';
 
 interface ExampleMenuItem {
   readonly label: string;
   readonly path: string;
-}
-
-interface ThemeOption {
-  readonly label: string;
-  readonly value: string;
-  readonly primaryColor: string;
-  readonly appTheme: 'theme-default' | 'theme-orange-light' | 'theme-orange-dark';
-  readonly appearance: 'light' | 'dark';
 }
 
 @Component({
@@ -33,7 +30,7 @@ export class ExamplesLayoutComponent {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly nzConfigService = inject(NzConfigService);
-  private readonly appThemeClasses = ['theme-orange-light', 'theme-orange-dark'] as const;
+  private readonly appThemeClasses = APPLIED_APP_THEME_CLASSES;
 
   protected readonly menuItems: ExampleMenuItem[] = [
     {
@@ -53,40 +50,11 @@ export class ExamplesLayoutComponent {
       path: '/hmi'
     }
   ];
-  protected readonly themeOptions: ThemeOption[] = [
-    {
-      label: '晨曦橙',
-      value: 'theme-orange-light',
-      primaryColor: '#fa8c16',
-      appTheme: 'theme-orange-light',
-      appearance: 'light'
-    },
-    {
-      label: '暮夜橙',
-      value: 'theme-orange-dark',
-      primaryColor: '#78359e',
-      appTheme: 'theme-orange-dark',
-      appearance: 'light'
-    },
-    {
-      label: '紫罗兰',
-      value: 'violet',
-      primaryColor: '#722ed1',
-      appTheme: 'theme-default',
-      appearance: 'light'
-    },
-    {
-      label: '青绿色',
-      value: 'cyan',
-      primaryColor: '#13c2c2',
-      appTheme: 'theme-default',
-      appearance: 'light'
-    },
-  ];
+  protected readonly themeOptions = EXAMPLE_THEME_OPTIONS;
 
   protected selectedTheme = this.themeOptions[0]?.value ?? 'theme-orange-light';
-  protected currentAppTheme: ThemeOption['appTheme'] = 'theme-orange-light';
-  protected currentAppearance: ThemeOption['appearance'] = 'light';
+  protected currentAppTheme: ExampleThemeOption['appTheme'] = 'theme-orange-light';
+  protected currentAppearance: ExampleThemeOption['appearance'] = 'light';
 
   constructor() {
     const defaultTheme = this.themeOptions[0];
@@ -116,7 +84,7 @@ export class ExamplesLayoutComponent {
     return this.currentAppTheme === 'theme-orange-light';
   }
 
-  private applyTheme(theme: ThemeOption): void {
+  private applyTheme(theme: ExampleThemeOption): void {
     const root = this.document.documentElement;
 
     this.currentAppTheme = theme.appTheme;
@@ -128,7 +96,7 @@ export class ExamplesLayoutComponent {
     }
 
     root.removeAttribute('data-app-theme');
-    this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
+    // this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
   }
 
   protected isActive(path: string): boolean {

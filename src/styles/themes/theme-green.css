@@ -1,0 +1,29 @@
+html.theme-green,
+app-hmi-page.theme-green,
+.hmi-overlay-theme.theme-green {
+
+  --ant-primary-color: rgb(82, 196, 26);
+  --ant-primary-color-disabled: #d9f7be;
+  --ant-primary-color-hover: #73d13d;
+  --ant-primary-color-active: #237804;
+  --ant-primary-color-outline: rgba(82, 196, 26, 0.2);
+  --ant-primary-color-deprecated-bg: #d9f7be;
+  --ant-primary-color-deprecated-border: #95de64;
+  --ant-primary-1: #f6ffed;
+  --ant-primary-2: #d9f7be;
+  --ant-primary-3: #b7eb8f;
+  --ant-primary-4: #95de64;
+  --ant-primary-5: #73d13d;
+  --ant-primary-6: #52c41a;
+  --ant-primary-7: #389e0d;
+  --ant-primary-8: #237804;
+  --ant-primary-9: #135200;
+  --ant-primary-10: #092b00;
+  --ant-primary-color-deprecated-l-35: rgb(186, 242, 158);
+  --ant-primary-color-deprecated-l-20: rgb(138, 233, 91);
+  --ant-primary-color-deprecated-t-20: rgb(117, 208, 72);
+  --ant-primary-color-deprecated-t-50: rgb(169, 226, 141);
+  --ant-primary-color-deprecated-f-12: rgba(82, 196, 26, 0.12);
+  --ant-primary-color-active-deprecated-f-30: rgba(246, 255, 237, 0.3);
+  --ant-primary-color-active-deprecated-d-02: rgb(241, 255, 227);
+}
