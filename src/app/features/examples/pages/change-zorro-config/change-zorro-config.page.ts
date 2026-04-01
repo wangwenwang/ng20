@@ -42,6 +42,13 @@ export class ChangeZorroConfigPageComponent {
 
     this.primaryColor = normalizedColor;
     this.nzConfigService.set('theme', { primaryColor: normalizedColor });
+    const styleTags = document.querySelectorAll('style[rc-util-key*="-ant-"]');
+    styleTags.forEach(styleEl => {
+      if (styleEl.innerHTML.includes(':root')) {
+        const themeName = document.documentElement.classList.value;
+        styleEl.innerHTML = styleEl.innerHTML.replace(/:root/g, `:root.${themeName}`);
+      }
+    });
   }
 
   protected usePreset(color: string): void {

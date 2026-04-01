@@ -1,4 +1,4 @@
-:root,
+:root.theme-orange-light,
 app-hmi-page.theme-orange-light,
 .hmi-overlay-theme.theme-orange-light {
 
@@ -26,4 +26,6 @@ app-hmi-page.theme-orange-light,
   --ant-primary-color-deprecated-f-12: rgba(250, 140, 22, 0.12);
   --ant-primary-color-active-deprecated-f-30: rgba(255, 247, 230, 0.3);
   --ant-primary-color-active-deprecated-d-02: rgb(255, 244, 220);
+
+  --portal-text-color: #fff;
 }
