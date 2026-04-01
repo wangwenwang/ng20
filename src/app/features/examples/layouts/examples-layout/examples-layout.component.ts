@@ -98,7 +98,7 @@ export class ExamplesLayoutComponent {
     }
 
     root.removeAttribute('data-app-theme');
-    // this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
+    this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
 
     this.layoutThemeSync.emitFromLayout(theme);
   }
