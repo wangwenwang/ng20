@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { NzConfigService } from 'ng-zorro-antd/core/config';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -22,7 +23,7 @@ interface ExampleMenuItem {
 
 @Component({
   selector: 'app-examples-layout',
-  imports: [FormsModule, RouterOutlet, RouterLink, NzLayoutModule, NzMenuModule, NzSelectModule, NzButtonModule],
+  imports: [FormsModule, RouterOutlet, RouterLink, ScrollingModule, NzLayoutModule, NzMenuModule, NzSelectModule, NzButtonModule],
   templateUrl: './examples-layout.component.html',
   styleUrl: './examples-layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
