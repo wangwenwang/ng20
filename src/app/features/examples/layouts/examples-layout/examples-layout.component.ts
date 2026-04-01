@@ -8,6 +8,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ExampleLayoutThemeSyncService } from '../../shared/example-layout-theme-sync.service';
 import {
   APPLIED_APP_THEME_CLASSES,
   EXAMPLE_THEME_OPTIONS,
@@ -30,6 +31,7 @@ export class ExamplesLayoutComponent {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly nzConfigService = inject(NzConfigService);
+  private readonly layoutThemeSync = inject(ExampleLayoutThemeSyncService);
   private readonly appThemeClasses = APPLIED_APP_THEME_CLASSES;
 
   protected readonly menuItems: ExampleMenuItem[] = [
@@ -97,6 +99,8 @@ export class ExamplesLayoutComponent {
 
     root.removeAttribute('data-app-theme');
     // this.nzConfigService.set('theme', { primaryColor: theme.primaryColor });
+
+    this.layoutThemeSync.emitFromLayout(theme);
   }
 
   protected isActive(path: string): boolean {

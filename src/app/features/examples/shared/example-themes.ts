@@ -61,3 +61,17 @@ export const EXAMPLE_THEME_OPTIONS: ReadonlyArray<ExampleThemeOption> = [
     appearance: 'light'
   }
 ];
+
+/** 根据 `document.documentElement` 上已应用的主题 class 解析当前示例主题（与 layout 写入方式一致）。 */
+export function getExampleThemeOptionFromDocument(
+  root: HTMLElement,
+  options: ReadonlyArray<ExampleThemeOption> = EXAMPLE_THEME_OPTIONS
+): ExampleThemeOption {
+  for (const option of options) {
+    if (option.appTheme !== 'theme-default' && root.classList.contains(option.appTheme)) {
+      return option;
+    }
+  }
+
+  return options[0]!;
+}
