@@ -6,19 +6,10 @@
     "start": "ng serve --host 0.0.0.0 --port 4207",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
+    "test": "ng test",
+    "lint": "npm run lint:ts && npm run lint:style",
+    "lint:ts": "ng lint",
+    "lint:style": "npx stylelint \"src/**/*.{css,scss,less}\""
   },
   "private": true,
   "dependencies": {
@@ -37,13 +28,35 @@
     "@angular/build": "^20.3.20",
     "@angular/cli": "^20.3.20",
     "@angular/compiler-cli": "^20.3.0",
+    "@angular-eslint/builder": "^20.4.0",
+    "@eslint/js": "^9.39.1",
+    "@types/eslint__js": "^8.42.3",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.1",
+    "@typescript-eslint/parser": "^8.46.1",
+    "@typescript-eslint/utils": "^8.46.1",
+    "angular-eslint": "^20.4.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^62.8.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-order": "^6.0.4",
+    "typescript-eslint": "^8.46.1",
     "typescript": "~5.9.2"
   }
 }
