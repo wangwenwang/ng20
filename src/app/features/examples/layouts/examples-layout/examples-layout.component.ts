@@ -8,6 +8,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 type ThemeValue = 'theme-default' | 'theme-orange-light' | 'theme-orange-dark' | 'theme-sky';
 
@@ -25,7 +26,7 @@ interface ThemeOption {
 
 @Component({
   selector: 'app-examples-layout',
-  imports: [FormsModule, RouterOutlet, RouterLink, NzLayoutModule, NzMenuModule, NzSelectModule, NzButtonModule],
+  imports: [FormsModule, RouterOutlet, RouterLink, NzLayoutModule, NzMenuModule, NzSelectModule, NzButtonModule, NzIconModule],
   templateUrl: './examples-layout.component.html',
   styleUrl: './examples-layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

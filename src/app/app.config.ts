@@ -8,6 +8,8 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { PlusOutline } from '@ant-design/icons-angular/icons';
+import { provideNzIcons } from 'ng-zorro-antd/icon';
 
 registerLocaleData(en);
 
@@ -22,6 +24,7 @@ export const appConfig: ApplicationConfig = {
         primaryColor: '#1890ff'
       }
     }),
+    provideNzIcons([PlusOutline]),
     provideAnimationsAsync(),
     provideHttpClient()
   ]
