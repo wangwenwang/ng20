@@ -8,8 +8,14 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-
+import { NzIconModule, provideNzIconsPatch } from 'ng-zorro-antd/icon';
+// 注入form图标
+import { FormOutline } from '@ant-design/icons-angular/icons';
+import { ArrowDownOutline } from '@ant-design/icons-angular/icons';
+import { AlibabaOutline } from '@ant-design/icons-angular/icons';
+// 增加coffee
+import { CoffeeOutline } from '@ant-design/icons-angular/icons';
+import { AudioMutedOutline } from '@ant-design/icons-angular/icons';
 type ThemeValue = 'theme-default' | 'theme-orange-light' | 'theme-orange-dark' | 'theme-sky';
 
 interface ExampleMenuItem {
@@ -26,6 +32,7 @@ interface ThemeOption {
 
 @Component({
   selector: 'app-examples-layout',
+  providers: [provideNzIconsPatch([FormOutline, ArrowDownOutline, AlibabaOutline, AudioMutedOutline, CoffeeOutline])],
   imports: [FormsModule, RouterOutlet, RouterLink, NzLayoutModule, NzMenuModule, NzSelectModule, NzButtonModule, NzIconModule],
   templateUrl: './examples-layout.component.html',
   styleUrl: './examples-layout.component.css',
